@@ -22,21 +22,15 @@ AirPhP is collaborative challenge set by [Makers Academy](www.makers.tech) durin
 ## User Stories
 
 ### MUSTS
-
-```
-As a property owner
-So that I can list my property
-I want to register as a user for AirPhP
-```
-```
-As a traveller
-So that I can book a property
-I want to register as a user for AirPhP
-```
 ```
 As a property owner
 So that I can list my property
 I want to be able to create a new listing
+```
+```
+As a traveller
+So that i can pick a property to stay at
+I want to be able to see all the listings
 ```
 ```
 As a traveller
@@ -76,6 +70,16 @@ As a property owner
 So that I can have multiple listings
 I want to create multiple listings
 ```
+```
+As a property owner
+So that I can list my property
+I want to register as a user for AirPhP
+```
+```
+As a traveller
+So that I can book a property
+I want to register as a user for AirPhP
+```
 ## Installation
 
 Use the Ruby package manager [Bundler](https://bundler.io/) to setup your environment after cloning the repository.
@@ -110,6 +114,7 @@ This section outlines known/identified areas of improvement/optimisation that se
 
 ##  Acknowledgements/Appreciations
 - Thanks to [ASCII Art Archive](www.asciiart.eu) for hosting the images we used for our banner.
+<<<<<<< HEAD
 
 ## Datebase Setup
 
@@ -117,3 +122,5 @@ Step 1. run ```psql```
 Step 2. ```CREATE DATABASE airphp```
 Step 3. ```\c airphp```
 Step 4. Run contents of file db/migrations/01_Create_listings_table.sql
+=======
+>>>>>>> b0afd47... Updated README.md - MUST user stories amended
