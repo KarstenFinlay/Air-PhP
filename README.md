@@ -22,21 +22,15 @@ AirPhP is collaborative challenge set by [Makers Academy](www.makers.tech) durin
 ## User Stories
 
 ### MUSTS
-
-```
-As a property owner
-So that I can list my property
-I want to register as a user for AirPhP
-```
-```
-As a traveller
-So that I can book a property
-I want to register as a user for AirPhP
-```
 ```
 As a property owner
 So that I can list my property
 I want to be able to create a new listing
+```
+```
+As a traveller
+So that i can pick a property to stay at
+I want to be able to see all the listings
 ```
 ```
 As a traveller
@@ -75,6 +69,16 @@ I want listings to exclude booked listing
 As a property owner
 So that I can have multiple listings
 I want to create multiple listings
+```
+```
+As a property owner
+So that I can list my property
+I want to register as a user for AirPhP
+```
+```
+As a traveller
+So that I can book a property
+I want to register as a user for AirPhP
 ```
 ## Installation
 
