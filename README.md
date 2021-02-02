@@ -1,4 +1,23 @@
+```
+                                                 *******
+                                 ~             *---*******
+                                ~             *-----*******
+                         ~                   *-------*******
+                        __      _   _!__     *-------*******
+                   _   /  \_  _/ \  |::| ___ **-----********   ~
+                 _/ \_/^    \/   ^\/|::|\|:|  **---*****/^\_
+              /\/  ^ /  ^    / ^ ___|::|_|:|_/\_******/  ^  \
+             /  \  _/ ^ ^   /    |::|--|:|---|  \__/  ^     ^\___
+           _/_^  \/  ^    _/ ^   |::|::|:|-::| ^ /_  ^    ^  ^   \_
+          /   \^ /    /\ /       |::|--|:|:--|  /  \        ^      \
+         /     \/    /  /        |::|::|:|:-:| / ^  \  ^      ^     \
+   _Q   / _Q  _Q_Q  / _Q    _Q   |::|::|:|:::|/    ^ \   _Q      ^   \
+  /_\)   /_\)/_/\\)  /_\)  /_\)  |::|::|:|:::|          /_\)       ^  \
+_O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________\
+////////////////////////////////////////////////////////////////////////
+```
 # AirPhP
+AirPhP is collaborative challenge set by [Makers Academy](www.makers.tech) during week 5 of the bootcamp. It is a web application that echos the basic functionality of [AirBnB](www.airbnb.com).
 
 ## User Stories
 
@@ -57,3 +76,37 @@ As a property owner
 So that I can have multiple listings
 I want to create multiple listings
 ```
+## Installation
+
+Use the Ruby package manager [Bundler](https://bundler.io/) to setup your environment after cloning the repository.
+
+```bash
+git clone git@github.com:KarstenFinlay/Air-PhP.git
+
+gem install bundle
+
+bundle
+```
+
+## Usage
+
+```ruby
+require './lib/app.rb'
+
+```
+
+## Approach
+We followed a strict [TDD](https://bit.ly/3q65B8q) approach to satisfying the requirements of this challenge. A systematic and iterative cycle of interpreting a series of user stories and developing feature tests/unit tests/feature implmentation/refactoring.
+
+We started off by reviewing the headline specifications and compiled an initial set of [user stories](#userstories) which we further segmented into the [musts](#MUSTS) and [shoulds](#SHOULDS)
+
+## Suggested Improvements
+This section outlines known/identified areas of improvement/optimisation that serve as input to future development of this project.
+
+- Suggested imporovement 1.
+
+- Suggested improvement 2.
+
+
+##  Acknowledgements/Appreciations
+- Thanks to [ASCII Art Archive](www.asciiart.eu) for hosting the images we used for our banner.
