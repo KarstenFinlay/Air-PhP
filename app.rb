@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/listing.rb'
 
 class AirPhP < Sinatra::Base
 
@@ -7,12 +8,13 @@ class AirPhP < Sinatra::Base
   end
 
   get '/listings' do
+    @listings = Listing.all
     erb(:'listings/index')
   end
 
   post '/listings' do
-    @listing = params
-    erb(:'listings/index')
+    Listing.create(name: params["name"])
+    redirect '/listings'
   end
 
   get '/listings/new' do
@@ -21,5 +23,5 @@ class AirPhP < Sinatra::Base
 
   # start the server if ruby file executed directly
   run! if app_file == $0
-  
+
 end

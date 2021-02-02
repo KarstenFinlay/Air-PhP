@@ -14,7 +14,7 @@ describe Listing do
 
   describe '.create' do
     it 'should create a new listing' do
-    Listing.create("Bill Gates Island")
+    Listing.create(name: "Bill Gates Island")
 
     expect(Listing.all).to include("Bill Gates Island")
     end
