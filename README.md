@@ -110,3 +110,10 @@ This section outlines known/identified areas of improvement/optimisation that se
 
 ##  Acknowledgements/Appreciations
 - Thanks to [ASCII Art Archive](www.asciiart.eu) for hosting the images we used for our banner.
+
+## Datebase Setup
+
+Step 1. run ```psql```
+Step 2. ```CREATE DATABASE airphp```
+Step 3. ```\c airphp```
+Step 4. Run contents of file db/migrations/01_Create_listings_table.sql
