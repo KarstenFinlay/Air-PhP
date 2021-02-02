@@ -22,16 +22,10 @@ AirPhP is collaborative challenge set by [Makers Academy](www.makers.tech) durin
 ## User Stories
 
 ### MUSTS
-
-```
-As a property owner
-So that I can list my property
-I want to register as a user for AirPhP
-```
 ```
 As a traveller
-So that I can book a property
-I want to register as a user for AirPhP
+So i can see available properties
+I want to be able to see all listings
 ```
 ```
 As a property owner
@@ -45,6 +39,16 @@ I want to be able request to hire a listing
 ```
 ---
 ### SHOULDS
+```
+As a property owner
+So that I can list my property
+I want to register as a user for AirPhP
+```
+```
+As a traveller
+So that I can book a property
+I want to register as a user for AirPhP
+```
 
 ```
 As a property owner
