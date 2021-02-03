@@ -1,7 +1,13 @@
 <h1>Welcome to the listings page</h1>
 <ul>
   <% @listings.each do |listing| %>
-    <li><%= listing %> - Unrequested </li>
+    <li><%= listing.name %> - 
+    <% if listing.available == 't' %>
+      Available
+    <% else %>
+      Unavailable
+    <% end %>  
+    </li>
     <form action="/listings/request" method="post">
       <input type="hidden" name="_method" value="PATCH" />
       <input type="submit" value="Request to book" />

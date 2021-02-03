@@ -17,7 +17,7 @@ class Listing
       connection = PG.connect(dbname: "airphp")
     end
     result = connection.exec("SELECT * FROM listings;")
-    result.map { |listing| listing['name']}
+    result.map { |listing| Listing.new(id: listing['id'], name: listing['name'], available: listing['available'])}
 
   end
 
