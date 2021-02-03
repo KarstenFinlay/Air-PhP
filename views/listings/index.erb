@@ -1,6 +1,10 @@
 <h1>Welcome to the listings page</h1>
-<%if @listings%>
-<% @listings.each do |listing| %>
-<%= listing %> <br>
-<%end%>
-<%end%>
+<ul>
+  <% @listings.each do |listing| %>
+    <li><%= listing %> - Unrequested </li>
+    <form action="/listings/request" method="post">
+      <input type="hidden" name="_method" value="PATCH" />
+      <input type="submit" value="Request to book" />
+    </form>
+  <% end %>
+</ul>
