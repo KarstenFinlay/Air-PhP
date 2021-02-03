@@ -1,6 +1,16 @@
 <h1>Welcome to the listings page</h1>
-<%if @listings%>
-<% @listings.each do |listing| %>
-<%= listing %> <br>
-<%end%>
-<%end%>
+<ul>
+  <% @listings.each do |listing| %>
+    <li><%= listing.name %> -
+    <% if listing.available == 't' %>
+      Available
+    <% else %>
+      Unavailable
+    <% end %>
+    </li>
+    <form action="/listings/request" method="post">
+      <input type="hidden" name="id" value="<%=listing.id%>" />
+      <input type="submit" value="Request to book" />
+    </form>
+  <% end %>
+</ul>
