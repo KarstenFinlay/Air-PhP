@@ -17,6 +17,10 @@ class AirPhP < Sinatra::Base
     redirect '/listings'
   end
 
+  patch '/listings/request' do
+    redirect '/lisings'
+  end
+
   get '/listings/new' do
     erb(:'listings/new')
   end
