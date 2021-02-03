@@ -4,22 +4,19 @@ describe Listing do
 
   describe '.all' do
     it 'should display all listings' do
-      connection = PG.connect(dbname: "airphp_test")
-      connection.exec("INSERT INTO listings (name) VALUES ('Bill Gates Island');")
+      Listing.create(name: 'Bill Gates Island')
 
       listings = Listing.all
-      expect(listings).to include("Bill Gates Island")
+      expect(listings[0].name).to eq ("Bill Gates Island")
     end
   end
 
   describe '.create' do
     it 'should create a new listing' do
-    listing = Listing.create(name: "Bill Gates Island")
+      listing = Listing.create(name: "Bill Gates Island")
 
-    expect(listing).to be_a Listing
-    expect(listing.name).to eq "Bill Gates Island"
-
-    expect(Listing.all).to include("Bill Gates Island")
+      expect(listing).to be_a Listing
+      expect(listing.name).to eq "Bill Gates Island"
     end
   end
 

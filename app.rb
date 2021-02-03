@@ -3,6 +3,8 @@ require './lib/listing.rb'
 
 class AirPhP < Sinatra::Base
 
+
+
   get '/' do
   'Hello World!'
   end
@@ -14,6 +16,11 @@ class AirPhP < Sinatra::Base
 
   post '/listings' do
     Listing.create(name: params["name"])
+    redirect '/listings'
+  end
+
+  post '/listings/request' do
+    Listing.request(id: params["id"])
     redirect '/listings'
   end
 
