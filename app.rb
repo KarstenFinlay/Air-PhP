@@ -28,6 +28,16 @@ class AirPhP < Sinatra::Base
     erb(:'listings/new', :layout => :layout_alt)
   end
 
+  get '/users/new' do
+   erb(:'users/new')
+  end
+
+  post '/users' do
+    @user = (params['email'])
+    erb(:'users/index')
+  end
+
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 
