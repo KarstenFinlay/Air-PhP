@@ -2,13 +2,14 @@ require 'pg'
 
 class Listing
 
-  attr_reader :id, :name, :available, :description
+  attr_reader :id, :name, :available, :description, :price
 
-  def initialize(id:, name:, available:, description:)
+  def initialize(id:, name:, available:, description:, price:)
     @id = id
     @name = name
     @available = available
     @description = description
+    @price = price
   end
 
   def self.all
@@ -19,20 +20,20 @@ class Listing
     end
     result = connection.exec("SELECT * FROM listings;")
     result.map { |listing| Listing.new(id: listing['id'], name: listing['name'], 
-                  available: listing['available'], description: listing['description'])}
+                  available: listing['available'], description: listing['description'], price: listing["price"])}
 
   end
 
-  def self.create(name:, description:)
+  def self.create(name:, description:, price:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: "airphp_test")
     else
       connection = PG.connect(dbname: "airphp")
     end
 
-    listing = connection.exec("INSERT INTO listings (name, available, description) VALUES ('#{name}', TRUE, '#{description}') 
-                              RETURNING id, name, available, description;").first
-    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'])
+    listing = connection.exec("INSERT INTO listings (name, available, description, price) VALUES ('#{name}', TRUE, '#{description}', '#{price}') 
+                              RETURNING id, name, available, description, price;").first
+    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'], price: listing["price"])
   end
 
   def self.request(id:)
@@ -42,8 +43,8 @@ class Listing
       connection = PG.connect(dbname: "airphp")
     end
 
-    listing = connection.exec("UPDATE listings SET available = FALSE WHERE id=#{id} RETURNING id, name, available, description;").first
-    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'])
+    listing = connection.exec("UPDATE listings SET available = FALSE WHERE id=#{id} RETURNING id, name, available, description, price;").first
+    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'], price: listing["price"])
 
   end
 
