@@ -3,4 +3,5 @@ require 'pg'
 def setup_test_database
   connection = PG.connect(dbname: "airphp_test")
   connection.exec("TRUNCATE listings;")
+  connection.exec("TRUNCATE users;")
 end

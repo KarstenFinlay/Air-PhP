@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require './lib/listing.rb'
+require './lib/listing'
+require './lib/user'
 
 class AirPhP < Sinatra::Base
 
@@ -33,7 +34,7 @@ class AirPhP < Sinatra::Base
   end
 
   post '/users' do
-    @user = (params['email'])
+    @user = User.create(email: params['email'], password: params['password'])
     erb(:'users/index')
   end
 
