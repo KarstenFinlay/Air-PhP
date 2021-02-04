@@ -25,7 +25,7 @@ class AirPhP < Sinatra::Base
   end
 
   get '/listings/new' do
-    erb(:'listings/new')
+    erb(:'listings/new', :layout => :layout_alt)
   end
 
   # start the server if ruby file executed directly
