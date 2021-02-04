@@ -7,6 +7,10 @@
     <% else %>
       Unavailable
     <% end %>
+    <br>
+    <%= listing.description %>
+    <br>
+    £<%=listing.price%>
     </li>
     <form action="/listings/request" method="post">
       <input type="hidden" name="id" value="<%=listing.id%>" />
