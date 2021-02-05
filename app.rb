@@ -4,13 +4,15 @@ require './lib/user'
 
 class AirPhP < Sinatra::Base
 
-
+  enable :sessions
 
   get '/' do
   'Hello World!'
   end
 
   get '/listings' do
+    # Fetch the user from the database, using an ID stored in the session
+    @user = User.find(id: session[:user_id])
     @listings = Listing.all
     erb(:'listings/index')
   end
@@ -30,12 +32,13 @@ class AirPhP < Sinatra::Base
   end
 
   get '/users/new' do
-   erb(:'users/new')
+    erb(:'users/new')
   end
 
   post '/users' do
-    @user = User.create(email: params['email'], password: params['password'])
-    erb(:'users/index')
+    user = User.create(email: params['email'], password: params['password'])
+    session[:user_id] = user.id
+    redirect '/listings'
   end
 
 

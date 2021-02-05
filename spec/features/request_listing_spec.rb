@@ -1,5 +1,9 @@
 feature 'update request status in table' do
   scenario 'changes a request status to true' do
+    visit ('/users/new')
+    fill_in "email", with: "email@email.com"
+    fill_in "password", with: "1234"
+    click_button "Register"
     visit ('/listings/new')
     fill_in "name",	with: "Test property"
     fill_in "price",	with: "99" 
