@@ -24,16 +24,16 @@ class Listing
 
   end
 
-  def self.create(name:, description:, price:)
+  def self.create(name:, description:, price:, user_id:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: "airphp_test")
     else
       connection = PG.connect(dbname: "airphp")
     end
 
-    listing = connection.exec("INSERT INTO listings (name, available, description, price) VALUES ('#{name}', TRUE, '#{description}', '#{price}') 
-                              RETURNING id, name, available, description, price;").first
-    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'], price: listing["price"])
+    listing = connection.exec("INSERT INTO listings (name, available, description, price, user_id) VALUES ('#{name}', TRUE, '#{description}', '#{price}', '#{user_id}') 
+                              RETURNING id, name, available, description, price, user_id;").first
+    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'], price: listing["price"], user_id: listing['user_id'])
   end
 
   def self.request(id:)

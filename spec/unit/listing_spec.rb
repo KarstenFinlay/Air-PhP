@@ -15,12 +15,14 @@ describe Listing do
 
   describe '.create' do
     it 'should create a new listing' do
-      listing = Listing.create(name: "Bill Gates Island", description: "5 bedroom house", price: 99)
+      user = User.create(email: 'test@aol.com', password: 'password')
+      listing = Listing.create(name: "Bill Gates Island", description: "5 bedroom house", price: 99, user_id: user.id)
 
       expect(listing).to be_a Listing
       expect(listing.name).to eq "Bill Gates Island"
       expect(listing.description).to eq "5 bedroom house"
       expect(listing.price).to eq "99"
+      expect(listing.user_id).to eq user.id
 
     end
   end
