@@ -6,11 +6,11 @@ feature 'update request status in table' do
     click_button "Register"
     visit ('/listings/new')
     fill_in "name",	with: "Test property"
-    fill_in "price",	with: "99" 
-    fill_in "description",	with: "5 bedroom house" 
+    fill_in "price",	with: "99"
+    fill_in "description",	with: "5 bedroom house"
     click_button "Submit"
     expect(page).to have_content("Test property - Available")
-    click_button "Request to book"
+    click_button "Book"
     expect(page).to have_content("Test property - Unavailable")
   end
 end
