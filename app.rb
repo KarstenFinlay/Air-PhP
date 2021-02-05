@@ -7,7 +7,7 @@ class AirPhP < Sinatra::Base
   enable :sessions
 
   get '/' do
-  'Hello World!'
+    redirect '/users/new'
   end
 
   get '/listings' do
