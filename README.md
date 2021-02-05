@@ -35,7 +35,7 @@ I want to be able to create a new listing
 ```
 As a traveller
 So that I can stay at a property
-I want to be able request to hire a listing
+I want to be able book a listing
 ```
 ---
 ### SHOULDS
@@ -49,7 +49,6 @@ As a traveller
 So that I can book a property
 I want to register as a user for AirPhP
 ```
-
 ```
 As a property owner
 So that I can add details about my listing
@@ -107,17 +106,38 @@ We started off by reviewing the headline specifications and compiled an initial 
 ## Suggested Improvements
 This section outlines known/identified areas of improvement/optimisation that serve as input to future development of this project.
 
-- Suggested imporovement 1.
+- Suggested improvement 1: Encrypt password
 
-- Suggested improvement 2.
+- Suggested improvement 2: Owner can't book their own property
+
+- Suggested improvement 2: Add date/calendar functionality
 
 
 ##  Acknowledgements/Appreciations
 - Thanks to [ASCII Art Archive](www.asciiart.eu) for hosting the images we used for our banner.
 
-## Datebase Setup
+## Database Setup
 
 Step 1. run ```psql```
+
 Step 2. ```CREATE DATABASE airphp```
+
 Step 3. ```\c airphp```
-Step 4. Run contents of file db/migrations/01_Create_listings_table.sql
+
+Step 4. Run contents of folder db/migrations
+
+Step 5. Run ```rackup``` and visit ```localhost=XXXX``` in your browser
+
+Step 6. Enjoy!
+
+## Test Database Setup (needed for testing purposes)
+
+Step 1. run ```psql```
+
+Step 2. ```CREATE DATABASE airphp_test```
+
+Step 3. ```\c airphp_test```
+
+Step 4. Run contents of folder db/migrations
+
+Step 5. Run ```rspec```, all tests should pass
