@@ -2,14 +2,15 @@ require 'pg'
 
 class Listing
 
-  attr_reader :id, :name, :available, :description, :price
+  attr_reader :id, :name, :available, :description, :price, :user_id
 
-  def initialize(id:, name:, available:, description:, price:)
+  def initialize(id:, name:, available:, description:, price:, user_id:)
     @id = id
     @name = name
     @available = available
     @description = description
     @price = price
+    @user_id = user_id
   end
 
   def self.all
@@ -20,7 +21,8 @@ class Listing
     end
     result = connection.exec("SELECT * FROM listings;")
     result.map { |listing| Listing.new(id: listing['id'], name: listing['name'], 
-                  available: listing['available'], description: listing['description'], price: listing["price"])}
+                  available: listing['available'], description: listing['description'], 
+                  price: listing["price"], user_id: listing["user_id"])}
 
   end
 
@@ -44,7 +46,7 @@ class Listing
     end
 
     listing = connection.exec("UPDATE listings SET available = FALSE WHERE id=#{id} RETURNING id, name, available, description, price;").first
-    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'], price: listing["price"])
+    Listing.new(id: listing['id'], name: listing['name'], available: listing['available'], description: listing['description'], price: listing["price"], user_id: listing['user_id'])
 
   end
 
