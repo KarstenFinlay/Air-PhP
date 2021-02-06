@@ -28,7 +28,7 @@ class AirPhP < Sinatra::Base
   end
 
   get '/listings/new' do
-    erb(:'listings/new', :layout => :layout_alt)
+    erb(:'listings/new', :layout => :layout)
   end
 
   get '/users/new' do
